@@ -1,0 +1,13 @@
+package br.com.fiap.games.model;
+
+import java.time.LocalDate;
+
+public class Game {
+	
+	private int id;
+	private String titulo;
+	private LocalDate dataLancamento;
+	private boolean finalizado;
+	private Studio studio;
+
+}

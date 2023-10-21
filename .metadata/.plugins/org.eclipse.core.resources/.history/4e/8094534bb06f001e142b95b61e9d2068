@@ -1,0 +1,39 @@
+package br.com.fiap.games.dao;
+
+import java.sql.Connection;
+
+import br.com.fiap.games.model.Game;
+
+public class GameDao {
+	
+	private Connection conexao;
+	
+	public GameDao(Connection conexao) {
+		this.conexao = conexao;
+	}
+
+	public void gravar(Game game) {
+
+		
+		
+		
+	}
+
+	public void excluir(Game game) {
+
+	}
+
+	public void atualizar(Game game) {
+
+	}
+
+	public void listarTodos() {
+
+	}
+	
+	public void buscarGamePorId(int id) {
+		
+	}
+	
+
+}

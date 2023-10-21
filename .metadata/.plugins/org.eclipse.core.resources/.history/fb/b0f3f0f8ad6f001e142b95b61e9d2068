@@ -1,0 +1,23 @@
+package br.com.fiap.games.dao;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+
+public class Conexao {
+	
+	private final String URL = "jdbc:oracle:thin:@oracle.fiap.com.br:1521:orcl";
+	private final String USUARIO = "pf1506";
+	private final String SENHA = "fiap23";
+	
+	public Connection abrirConexao() {
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			
+			Connection conexao = DriverManager.getConnection("", null, null)
+			
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+	}
+
+}

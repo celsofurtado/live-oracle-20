@@ -1,0 +1,66 @@
+package br.com.fiap.games.dao;
+
+import java.sql.Connection;
+import java.sql.Date;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import br.com.fiap.games.model.Game;
+
+public class GameDao {
+	
+	private Connection conexao;
+	
+	public GameDao(Connection conexao) {
+		this.conexao = conexao;
+	}
+
+	public void gravar(Game game) {
+
+		String sql = "INSERT INTO tbl_game (ID, TITULO, DATA_LANCAMENTO, FINALIZADO, ID_STUDIO) "
+				+ "VALUES (sq_game.nextval, ?, ?, ?, ?)";
+		
+		try {
+			PreparedStatement ps = conexao.prepareStatement(sql);
+			
+			ps.setString(1, game.getTitulo());
+			
+			Date data = Date.valueOf(game.getDataLancamento());
+			ps.setDate(2, data);
+			
+			int finalizado = game.isFinalizado() ? 1 : 0;
+			ps.setInt(3, finalizado);
+			
+			ps.setInt(4, game.getStudio().getId());
+			
+			ps.execute();
+			
+			ps.close();
+			conexao.close();
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+	}
+
+	public void excluir(Game game) {
+
+	}
+
+	public void atualizar(Game game) {
+
+	}
+
+	public void listarTodos() {
+
+	}
+	
+	public void buscarGamePorId(int id) {
+		
+	}
+	
+
+}

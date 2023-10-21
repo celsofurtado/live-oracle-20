@@ -1,0 +1,11 @@
+package br.com.fiap.games;
+
+public class GameApp {
+
+	public static void main(String[] args) {
+		
+		
+
+	}
+
+}

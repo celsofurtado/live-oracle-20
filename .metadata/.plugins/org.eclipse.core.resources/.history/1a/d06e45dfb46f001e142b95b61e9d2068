@@ -1,0 +1,32 @@
+package br.com.fiap.games;
+
+import java.time.LocalDate;
+
+import br.com.fiap.games.dao.Conexao;
+import br.com.fiap.games.dao.GameDao;
+import br.com.fiap.games.model.Game;
+import br.com.fiap.games.model.Studio;
+
+public class GameApp {
+
+	public static void main(String[] args) {
+		
+		Game game = new Game();
+		game.setTitulo("Ninja Turtles");
+		game.setDataLancamento(LocalDate.of(2000, 4, 12));
+		game.setFinalizado(true);
+		game.setStudio(new Studio(100, "Capcom"));
+		
+		GameDao gDao = new GameDao(Conexao.abrirConexao());
+		//gDao.gravar(game);
+		
+		//gDao.buscarGamePorId(1);
+		
+		for(Game g : gDao.listarTodos()) {
+			System.out.println(g);
+		}
+		
+
+	}
+
+}

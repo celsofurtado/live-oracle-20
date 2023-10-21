@@ -1,0 +1,8 @@
+package br.com.fiap.games.model;
+
+public class Studio {
+	
+	private int id;
+	private String nome;
+
+}
